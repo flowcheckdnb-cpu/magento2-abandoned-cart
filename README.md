@@ -14,20 +14,20 @@ AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by 
 
 ## Status
 
-**v0.3.0 — three-stage cadence with coupon.**
+**v0.4.0 — four email types, four channels.**
 
 Implemented:
-- Three-stage cadence: stage 1 reminder, stage 2 follow-up, stage 3 with auto-generated coupon
-- AI generator (Google Gemini) + static template fallback per stage
-- Cron-driven scanner with send-log dedup keyed on `(quote_id, stage_key)`
-- `CouponIssuer` mints unique codes from an admin-selected cart price rule (requires `use_auto_generation=1` on the rule)
-- Generated coupon is rendered as a prominent banner + mentioned naturally in AI body copy
+- Three-stage abandoned-cart cadence: stage 1 reminder, stage 2 follow-up, stage 3 with auto-generated coupon
+- **Low-stock urgency email** — separate cron, fires daily when any cart item drops to qty ≤ threshold but is still > 0; carries its own coupon from a separate admin-selected rule
+- AI generator (Google Gemini) + static template fallback per email type
+- Cron-driven scanner with send-log dedup keyed on `(quote_id, stage_key)` — stage keys for low-stock embed the date so the unique constraint enforces a natural daily cap
+- `CouponIssuer` mints unique codes from any admin-selected cart price rule (requires `use_auto_generation=1` on the rule)
+- Generated coupon is rendered as a prominent banner AND mentioned naturally in AI body copy
 - `sales_order_place_after` observer that suppresses future sends once the customer buys
 - Token-signed recovery link in every email — restores the quote into the visitor's session and redirects to `/checkout/cart`
 - API key redaction in error logs
 
-Planned for v0.4.0+:
-- Low-stock urgency email
+Planned for v0.5.0+:
 - Unsubscribe controller
 - Admin grid (send log listing + test-send button)
 - Unit + integration tests
