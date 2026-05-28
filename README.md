@@ -1,5 +1,9 @@
 # Magebit Abandoned Cart
 
+[![Latest Version](https://img.shields.io/packagist/v/flowcheckdnb-cpu/module-abandoned-cart.svg?style=flat-square)](https://packagist.org/packages/flowcheckdnb-cpu/module-abandoned-cart)
+[![License](https://img.shields.io/packagist/l/flowcheckdnb-cpu/module-abandoned-cart.svg?style=flat-square)](LICENSE)
+[![PHP Version](https://img.shields.io/packagist/php-v/flowcheckdnb-cpu/module-abandoned-cart.svg?style=flat-square)](composer.json)
+
 AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by Google Gemini.
 
 ## Features
@@ -44,19 +48,7 @@ Planned for v1.0.0+:
 
 ## Installation
 
-Once the package is on Packagist:
-
 ```bash
-composer require flowcheckdnb-cpu/module-abandoned-cart
-bin/magento setup:upgrade
-bin/magento setup:di:compile
-bin/magento cache:clean
-```
-
-Or install directly from the GitHub repository (no Packagist needed):
-
-```bash
-composer config repositories.abandoned-cart vcs https://github.com/flowcheckdnb-cpu/magento2-abandoned-cart
 composer require flowcheckdnb-cpu/module-abandoned-cart
 bin/magento setup:upgrade
 bin/magento setup:di:compile
