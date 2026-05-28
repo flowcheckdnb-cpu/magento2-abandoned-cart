@@ -14,20 +14,21 @@ AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by 
 
 ## Status
 
-**v0.1.0 — early preview.**
+**v0.2.0 — usable preview.**
 
 Implemented:
 - Stage 1 (initial reminder) end-to-end
-- AI generator + static fallback
-- Cron job + send log
+- AI generator (Gemini) + static template fallback
+- Cron-driven scanner with send-log dedup
+- `sales_order_place_after` observer that suppresses future sends once the customer buys
+- Token-signed recovery link in every email — restores the quote into the visitor's session and redirects to `/checkout/cart`
 
-Planned for v0.2.0+:
+Planned for v0.3.0+:
 - Stage 2 (24 h follow-up) and Stage 3 (72 h with auto-generated coupon)
 - Low-stock urgency email
-- Observer to stop sends on order placement
-- Recovery link controller + token-signed URL
 - Unsubscribe controller
 - Admin grid (send log listing + test-send button)
+- Unit + integration tests
 
 ## Requirements
 

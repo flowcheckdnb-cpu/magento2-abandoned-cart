@@ -34,7 +34,8 @@
         "magento/module-config": "*",
         "magento/module-backend": "*",
         "magento/module-ui": "*",
-        "magento/module-cron": "*"
+        "magento/module-cron": "*",
+        "magento/module-checkout": "*"
     },
     "autoload": {
         "files": ["registration.php"],
