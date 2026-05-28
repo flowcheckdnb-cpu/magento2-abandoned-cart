@@ -44,9 +44,20 @@ Planned for v1.0.0+:
 
 ## Installation
 
+Once the package is on Packagist:
+
 ```bash
-composer config repositories.magebit-abandoned-cart vcs https://github.com/flowcheckdnb-cpu/magento2-abandoned-cart
-composer require magebit/module-abandoned-cart:^0.1
+composer require flowcheckdnb-cpu/module-abandoned-cart
+bin/magento setup:upgrade
+bin/magento setup:di:compile
+bin/magento cache:clean
+```
+
+Or install directly from the GitHub repository (no Packagist needed):
+
+```bash
+composer config repositories.abandoned-cart vcs https://github.com/flowcheckdnb-cpu/magento2-abandoned-cart
+composer require flowcheckdnb-cpu/module-abandoned-cart
 bin/magento setup:upgrade
 bin/magento setup:di:compile
 bin/magento cache:clean

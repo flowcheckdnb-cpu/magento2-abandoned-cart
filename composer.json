@@ -1,5 +1,5 @@
 {
-    "name": "magebit/module-abandoned-cart",
+    "name": "flowcheckdnb-cpu/module-abandoned-cart",
     "description": "AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by Google Gemini",
     "type": "magento2-module",
     "license": "OSL-3.0",
