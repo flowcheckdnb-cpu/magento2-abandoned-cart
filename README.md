@@ -14,7 +14,7 @@ AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by 
 
 ## Status
 
-**v0.8.0 — product images + redesigned emails.**
+**v0.9.0 — style rotation for fresh, non-repetitive emails.**
 
 Implemented:
 - Three-stage abandoned-cart cadence: stage 1 reminder, stage 2 follow-up, stage 3 with auto-generated coupon
@@ -30,8 +30,9 @@ Implemented:
 - **Admin send-log grid** at *Marketing → Communications → Abandoned Cart Log* — filterable/sortable columns (Type, Recipient, Store, Status, AI?, Coupon, Recovered At, Unsubscribed?), CSV/Excel export, mass-delete and mass-mark-unrecovered actions.
 - **Personalized coupon codes**: codes are prefixed with the customer's sanitized first name (or email local-part when no name is on file), e.g. `VERONICA-AB3F` instead of `0GK2IY2HCNVB`. Magento's coupon generator still guarantees uniqueness via the random suffix.
 - **Product images + redesigned emails**: every email shows a cart-items grid (thumbnail · name · qty · line price) above the AI body copy. Card layout on a soft canvas, dashed coupon banner, primary CTA. Low-stock template gets a red urgency pill and red CTA.
+- **Style rotation**: each send randomly picks one of 7 rhetorical approaches (curious question, vivid observation, playful, brief, scene-setting, friend-texting, direct statement) so the same customer reading stages 1/2/3 doesn't see the same "Hey {name}" pattern three times.
 
-Planned for v0.9.0+:
+Planned for v1.0.0+:
 - Unit + integration tests
 - Test-send admin button
 
