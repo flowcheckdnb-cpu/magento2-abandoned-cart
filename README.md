@@ -14,7 +14,7 @@ AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by 
 
 ## Status
 
-**v0.6.0 — admin send-log grid.**
+**v0.7.0 — personalized coupon codes.**
 
 Implemented:
 - Three-stage abandoned-cart cadence: stage 1 reminder, stage 2 follow-up, stage 3 with auto-generated coupon
@@ -28,8 +28,9 @@ Implemented:
 - API key redaction in error logs
 - **One-click unsubscribe**: every email carries an unsubscribe link that flips the `unsubscribed` flag on every log row for the (customer_email, store_id) pair. Both finders consult that flag before yielding candidates.
 - **Admin send-log grid** at *Marketing → Communications → Abandoned Cart Log* — filterable/sortable columns (Type, Recipient, Store, Status, AI?, Coupon, Recovered At, Unsubscribed?), CSV/Excel export, mass-delete and mass-mark-unrecovered actions.
+- **Personalized coupon codes**: codes are prefixed with the customer's sanitized first name (or email local-part when no name is on file), e.g. `VERONICA-AB3F` instead of `0GK2IY2HCNVB`. Magento's coupon generator still guarantees uniqueness via the random suffix.
 
-Planned for v0.7.0+:
+Planned for v0.8.0+:
 - Unit + integration tests
 - Test-send admin button
 
