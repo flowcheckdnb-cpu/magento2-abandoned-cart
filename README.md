@@ -18,7 +18,7 @@ AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by 
 
 ## Status
 
-**v0.10.0 — admin test-send button.**
+**v0.12.0 — unit-test suite (26 tests).**
 
 Implemented:
 - Three-stage abandoned-cart cadence: stage 1 reminder, stage 2 follow-up, stage 3 with auto-generated coupon
@@ -36,9 +36,11 @@ Implemented:
 - **Product images + redesigned emails**: every email shows a cart-items grid (thumbnail · name · qty · line price) above the AI body copy. Card layout on a soft canvas, dashed coupon banner, primary CTA. Low-stock template gets a red urgency pill and red CTA.
 - **Style rotation**: each send randomly picks one of 7 rhetorical approaches (curious question, vivid observation, playful, brief, scene-setting, friend-texting, direct statement) so the same customer reading stages 1/2/3 doesn't see the same "Hey {name}" pattern three times.
 - **Admin test-send button** on the send-log grid. Dispatches one preview email of the selected type to any recipient using a synthetic sample cart — no coupon minted, no log row written.
+- **Unit test suite** (26 tests, 57 assertions, ~20 ms) covering `MarkdownRenderer`, `StaticTemplateFallback`, `Gemini\ResponseParser`, and `CouponIssuer` (including all coupon-prefix sanitization edge cases).
 
 Planned for v1.0.0+:
-- Unit + integration tests
+- Integration tests (`SendLogRepository` dedup, `AbandonedCartFinder` window query)
+- Recovery-click tracking
 
 ## Requirements
 
