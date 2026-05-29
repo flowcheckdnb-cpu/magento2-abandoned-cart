@@ -18,7 +18,7 @@ AI brand-voice abandoned-cart recovery emails for Magento 2 + Hyvä, powered by 
 
 ## Status
 
-**v0.12.0 — unit-test suite (26 tests).**
+**v0.13.0 — original plan complete (OOS filter + integration tests).**
 
 Implemented:
 - Three-stage abandoned-cart cadence: stage 1 reminder, stage 2 follow-up, stage 3 with auto-generated coupon
@@ -37,10 +37,13 @@ Implemented:
 - **Style rotation**: each send randomly picks one of 7 rhetorical approaches (curious question, vivid observation, playful, brief, scene-setting, friend-texting, direct statement) so the same customer reading stages 1/2/3 doesn't see the same "Hey {name}" pattern three times.
 - **Admin test-send button** on the send-log grid. Dispatches one preview email of the selected type to any recipient using a synthetic sample cart — no coupon minted, no log row written.
 - **Unit test suite** (26 tests, 57 assertions, ~20 ms) covering `MarkdownRenderer`, `StaticTemplateFallback`, `Gemini\ResponseParser`, and `CouponIssuer` (including all coupon-prefix sanitization edge cases).
+- **Out-of-stock + disabled-product filter**: `AbandonedCartFinder` skips quotes whose items are all non-salable so customers aren't asked to recover empty carts.
+- **Integration tests scaffolded** for `SendLogRepository` (4 tests: dedup constraint, stage-key separation, recovered flag, per-store unsubscribe). Run via `vendor/bin/phpunit -c dev/tests/integration/phpunit.xml.dist` once the Magento integration sandbox DB is configured.
 
 Planned for v1.0.0+:
-- Integration tests (`SendLogRepository` dedup, `AbandonedCartFinder` window query)
 - Recovery-click tracking
+- GDPR consent flow at checkout
+- Customer-group targeting
 
 ## Requirements
 
